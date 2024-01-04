@@ -1,23 +1,23 @@
 import Container from "@/components/Container";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, Car, CheckCircle } from "lucide-react";
 import Link from 'next/link';
 
 const perks = [
   {
     name: 'Instalar App',
     Icon: ArrowDownToLine,
-    description: 'Baixe Agora o app e receba todas as novidades em seu smartphone'
+    description: 'Baixe Agora o app e receba todas as novidades em seu smartphone.'
   },
   {
-    name: 'Instalar App',
-    Icon: ArrowDownToLine,
-    description: 'Baixe Agora o app e receba todas as novidades em seu smartphone'
+    name: 'Consórcio Imobiliário',
+    Icon: CheckCircle,
+    description: 'Consórcio Imobiliário aprovado dinheiro na conta.'
   },
   {
-    name: 'Instalar App',
-    Icon: ArrowDownToLine,
-    description: 'Baixe Agora o app e receba todas as novidades em seu smartphone'
+    name: 'Consórcio Veícular',
+    Icon: Car,
+    description: 'Consórcio Veículo mais chances de aprovação.'
   }
 ]
 
@@ -50,17 +50,23 @@ export default function Home() {
     </Container>
 
     <section className="border-t border-gray-200 bg-gray-50">
-      <Container className="py-20">
-        <div className="grid grid-cols-1 gap-y-12 m:grid-cols-2">
-          <div>
-            <div className="text-center md:flex">
-              <div className="text-center md:flex md:items-start">
-                <div className="h-16 w-16 flex items-center justify-center rounded-sm">
-                  <ArrowDownToLine />
-                </div>
+      <Container className="py-4 max-w-3x1">
+        <div>
+          {perks.map((perk) =>(
+            <div key={perk.name} className="text-center">
+              <div className="flex flex-col justify-center mx-auto py-4">
+                <p className="font-semibold">{perk.name}</p>
+                
+                <div className="flex flex-col justify-center items-center mx-auto">
+                  <div className="h-12 w-12 my-2 rounded-full bg-blue-400 flex items-center justify-center">
+                    {<perk.Icon className="w-1/1 h-1/1 text-white" />}
+                  </div>
+
+                  <p>{perk.description}</p>
+                </div>              
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </Container>
     </section>
