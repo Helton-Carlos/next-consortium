@@ -25,7 +25,7 @@ export default function Home() {
   return (
    <>
     <Container>
-      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3x1">
+      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3x1 md:w-2/5">
         <h1 className="text-3xl font-bold tracking-ight text-gray-900 md:text-5x1">
           Seu sonho mais perto de você{' '}
           <span className="text-blue-600">
@@ -38,20 +38,22 @@ export default function Home() {
         </p>
 
         <div className='flex flex-col sm:flex-row gap-4 mt-5'>
-          <Link href='/' className={buttonVariants()}>
+          <Link href='/services' className={buttonVariants()}>
             Conheça Nosso Serviço
           </Link>
 
-          <Button variant='ghost'>
-            Simule Agora &rarr;
-          </Button>
+          <Link href='/create-account'>
+            <Button variant='ghost'>
+              Simule Agora &rarr;
+            </Button>
+          </Link>
         </div>
       </div>
     </Container>
 
     <section className="border-t border-gray-200 bg-gray-50">
       <Container className="py-4 max-w-3x1">
-        <div>
+        <div className="flex flex-col md:flex-row">
           {perks.map((perk) =>(
             <div key={perk.name} className="text-center">
               <div className="flex flex-col justify-center mx-auto py-4">
